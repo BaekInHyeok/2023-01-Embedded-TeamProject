@@ -16,7 +16,7 @@
 
             header("Refresh:3"); # 3초마다 페이지가 새로고침됨 - 실시간 모니터링
 
-            $connect = mysqli_connect("192.168.77.230","root","1234","embeded"); # MySQL DB에 접속
+            $connect = mysqli_connect("192.168.77.230","root","1234","embeded"); # MariaDB에 접속
             # MySQL의 데이터를 활용하기 위한 SQL문
             $sql1 = "SELECT gas FROM data ORDER BY id DESC LIMIT 1";
             $sql2 = "SELECT * FROM data";
@@ -91,7 +91,7 @@
                         </tr>
                 </table>';
                 echo $table1;
-                # 디버깅용으로 MySQL의 모든 정보를 출력
+                # 디버깅용으로 MariaDB 내 테이블의 모든  출력
                 $table2 = '
                 <table border="1" align=right style="display: inline-block; vertical-align: middle;">
                         <tr>
