@@ -17,12 +17,12 @@
             header("Refresh:3"); # 3초마다 페이지가 새로고침됨 - 실시간 모니터링
 
             $connect = mysqli_connect("192.168.77.230","root","1234","embeded"); # MariaDB에 접속
-            # MySQL의 데이터를 활용하기 위한 SQL문
+            # MariaDB의 데이터를 활용하기 위한 SQL문
             $sql1 = "SELECT gas FROM data ORDER BY id DESC LIMIT 1";
             $sql2 = "SELECT * FROM data";
             $sql3 = "SELECT flame FROM data ORDER BY id DESC LIMIT 1";
             $sql4 = "SELECT temp FROM data ORDER BY id DESC LIMIT 1";
-            # 입력한 SQL문으로 MySQL과의 연동이 성공했는지를 저장
+            # 입력한 SQL문으로 MariaDB과의 연동이 성공했는지를 저장
             $result1 = mysqli_query($connect, $sql1);
             $result2 = mysqli_query($connect, $sql2);
             $result3 = mysqli_query($connect, $sql3);
@@ -75,7 +75,7 @@
                 }
             }
 
-            if(mysqli_num_rows($result2) > 0) # MySQL이 연결되었다면
+            if(mysqli_num_rows($result2) > 0) # MariaDB이 연결되었다면
             { # 표를 출력해 가장 최근 시점의 가스누출여부, 화재발생여부, 고온 여부를 출력함.
                 $table1 = '
                 <table border="1" align=middle style="display: inline-block; vertical-align: middle; text-align: center;">
